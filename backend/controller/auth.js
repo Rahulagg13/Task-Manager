@@ -1,5 +1,5 @@
 const jwt = require("jsonwebtoken");
-const { promisify } = require("node:util");
+const { promisify } = require("util");
 const User = require("../Model/userModel");
 const sendMail = require("../utils/mailController");
 const crypto = require("crypto");
