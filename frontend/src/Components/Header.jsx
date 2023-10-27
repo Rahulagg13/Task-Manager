@@ -19,7 +19,7 @@ const Header = () => {
       <div className="flex justify-between items-center px-12 py-8   ">
         {!user && (
           <Link
-            to="/app"
+            to="/"
             className="text-xl font-bold tracking-wider md:text-2xl "
           >
             Task-Manager

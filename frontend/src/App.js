@@ -40,7 +40,7 @@ function App() {
         <Header />
         <Routes>
           <Route
-            path="/app"
+            path="/"
             element={
               <Suspense fallback={<Loader />}>
                 <HomePage />
