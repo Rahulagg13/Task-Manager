@@ -18,6 +18,7 @@ if (process.env.NODE_ENV === "development") {
 app.use(
   cors({
     origin: "https://task-manager-frontend-weld.vercel.app/",
+    credentials: true,
   })
 );
 
