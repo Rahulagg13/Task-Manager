@@ -1,0 +1,41 @@
+version: "3.8"
+
+services:
+  mongodb:
+    container_name: mongodb
+    image: mongo
+
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: ${MONGO_USERNAME}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_PASSWORD}
+
+    volumes:
+      - db:data/db
+
+  backend:
+    container_name: task-backend
+    build: ../backend
+    ports:
+      - 8000:8000
+    env_file:
+      - ../backend/config.file
+    volumes:
+      - ../backend:/app
+      - /app/node_modules
+    depends_on:
+      - mongodb
+
+  frontend:
+    container_name: task-frontend
+    build: ../frontend
+    ports:
+      - 3000:3000
+    volumes:
+      - ../frontend/src:/app/src
+    stdin_open: true
+    tty: true
+    depends_on:
+      - backend
+
+volumes:
+  db:

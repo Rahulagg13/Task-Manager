@@ -1,0 +1,16 @@
+[
+  {
+    "username": "Rahul Aggarwal",
+    "email": "rahulagg13062002@gmail.com",
+    "password": "$2b$12$gZDo/gSt1UyAJMDgpVvLf.Suj14aEZ9oh/mh6tmcfo0Zn5wIHU/2q",
+    "id": "a57af6e4-b9e7-4fb5-a99b-80ecd534bfb3",
+    "role": "Admin"
+  },
+  {
+    "username": "Rahul Aggarwal",
+    "email": "rahul.20b0101173@abes.ac.in",
+    "password": "$2b$12$c7VC8hcg0Wl31j9r78hgAOijHDaDqIzBWGAh17nHvFq2lGDWfjkzm",
+    "id": "ba67af4a-45d8-4acd-9524-6dc2e91b8b52",
+    "role": "User"
+  }
+]
