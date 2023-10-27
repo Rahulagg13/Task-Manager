@@ -11,7 +11,7 @@ const globalErrorhandler = require("./controller/errorController");
 const errorController = require("./controller/errorController");
 
 const app = express();
-console.log(process.env.NODE_ENV);
+// console.log(process.env.NODE_ENV);
 if (process.env.NODE_ENV === "development") {
   app.use(morgan("dev"));
 }
