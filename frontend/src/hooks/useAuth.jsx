@@ -42,8 +42,9 @@ export const useAuth = () => {
       navigate("/app/alltask");
       toast.success("Successfully created an account!!!");
     } catch (error) {
+      console.log(error)
       // console.log(error.response.data.message);
-      setError(error.response.data.message);
+      setError(error.response?.data.message);
     } finally {
       setIsLoading(false);
     }
@@ -52,13 +53,14 @@ export const useAuth = () => {
   //login
   const signin = async (data) => {
     try {
+      console.log(data);
       setIsLoading(true);
       const response = await axios.post(
         process.env.REACT_APP_BASE_URL + "auth/signin",
         data,
         {
           headers: {
-           "Content-Type": "application/json" 
+            "Content-Type": "application/json",
           },
         }
       );
@@ -66,6 +68,7 @@ export const useAuth = () => {
         expires: new Date(Date.now() + 2 * 60 * 60 * 1000),
         // httpOnly: true,
       });
+      console.log(response);
       const value = {
         id: response.data.data.user._id,
         email: response.data.data.user.email,
@@ -79,7 +82,8 @@ export const useAuth = () => {
       navigate("/app/alltask");
       toast.success("You are successfully logged in !!!");
     } catch (error) {
-      setError(error.response.data.message);
+      console.log(error);
+      setError(error.response?.data.message);
     } finally {
       setIsLoading(false);
     }

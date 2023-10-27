@@ -15,12 +15,7 @@ const app = express();
 if (process.env.NODE_ENV === "development") {
   app.use(morgan("dev"));
 }
-app.use(
-  cors({
-    origin: "https://task-manager-frontend-weld.vercel.app/",
-    credentials: true,
-  })
-);
+app.use(cors());
 
 app.use(express.json());
 
