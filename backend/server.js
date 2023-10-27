@@ -5,7 +5,7 @@ process.on("uncaughtException", (err) => {
 });
 
 require("dotenv").config({ path: "./config.env" });
-const app = require("./app");
+const app = require("./index");
 const db = require("./db");
 
 const PORT = process.env.PORT || 5000;
