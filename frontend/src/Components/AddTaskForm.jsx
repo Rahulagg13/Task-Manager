@@ -22,7 +22,6 @@ const AddTaskForm = () => {
   const description = useRef("");
   const priority = useRef("");
   const { createTask, isLoading, error } = useTask();
-  console.log(error);
   const handleSubmit = async (e) => {
     e.preventDefault();
 

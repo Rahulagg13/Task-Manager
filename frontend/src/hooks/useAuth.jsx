@@ -62,7 +62,6 @@ export const useAuth = () => {
           },
         }
       );
-      console.log(response);
       setCookie("jwt", response.data.token, {
         expires: new Date(Date.now() + 2 * 60 * 60 * 1000),
         // httpOnly: true,
@@ -80,7 +79,6 @@ export const useAuth = () => {
       navigate("/app/alltask");
       toast.success("You are successfully logged in !!!");
     } catch (error) {
-      console.log(error);
       setError(error.response.data.message);
     } finally {
       setIsLoading(false);

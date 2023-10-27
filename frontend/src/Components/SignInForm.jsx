@@ -17,7 +17,6 @@ const SignInForm = () => {
       email: email.current.value,
       password: password.current.value,
     };
-    console.log(data);
     await signin(data);
   };
   return (

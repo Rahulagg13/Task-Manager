@@ -3,10 +3,10 @@ const AppError = require("../utils/AppError");
 const catchAsync = require("../utils/catchAsync");
 
 exports.getAlltask = catchAsync(async (req, res, next) => {
-  console.log(req.user);
-  console.log(req.user._id);
+  // console.log(req.user);
+  // console.log(req.user._id);
   const tasks = await Task.find({ users: req.user._id });
-  console.log(tasks);
+  // console.log(tasks);
 
   res.status(200).json({
     status: "success",

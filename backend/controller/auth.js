@@ -29,7 +29,7 @@ const signToken = (id) => {
 };
 
 const createToken = (user, statusCode, res) => {
-  console.log(user);
+  // console.log(user);
   const token = signToken(user._id);
   // const cookieOptions = {
   //   httpOnly: true,
@@ -53,7 +53,7 @@ exports.Authorization = async (req, res, next) => {
   try {
     let token;
     const auth = req.headers.authorization;
-    console.log(req.headers);
+    // console.log(req.headers);
     if (auth && auth.startsWith("Bearer")) {
       token = auth.split(" ")[1];
     } else if (req.cookies.jwt) {
@@ -73,7 +73,7 @@ exports.Authorization = async (req, res, next) => {
 };
 
 exports.signup = catchAsync(async (req, res, next) => {
-  console.log(req.body);
+  // console.log(req.body);
   const newUser = await User.create({
     username: req.body.username,
     email: req.body.email,
@@ -86,12 +86,12 @@ exports.signup = catchAsync(async (req, res, next) => {
 
 exports.signin = catchAsync(async (req, res, next) => {
   const { email, password } = req.body;
-  console.log(email);
+  // console.log(email);
   if (!email || !password)
     return next(new AppError("Please provide email and password", 500));
 
   const user = await User.findOne({ email });
-  console.log(user);
+  // console.log(user);
   if (!user || !(await user.correctPassword(password, user.password)))
     return next(new AppError("Incorrect Email or password", 500));
 

@@ -40,7 +40,6 @@ function useTask() {
         }
       );
     } catch (err) {
-      console.log(err);
       setError(err);
     } finally {
       setIsLoading(false);

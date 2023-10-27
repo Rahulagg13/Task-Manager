@@ -29,8 +29,6 @@ const DashBoard = () => {
 
   const handleDelete = async (id) => {
     try {
-      console.log(id);
-      console.log(cookies.jwt);
       const res = await axios.get(
         process.env.REACT_APP_BASE_URL + `users/deactivateUser/${id}`,
         {
@@ -44,7 +42,6 @@ const DashBoard = () => {
       window.location.reload();
       toast.success("User delete successfully");
     } catch (err) {
-      console.log(err);
       toast.error("Something went wrong !!!");
     }
   };

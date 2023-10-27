@@ -42,7 +42,7 @@ exports.deactivateUser = catchAsync(async (req, res, next) => {
 });
 
 exports.deactivateAnyUser = catchAsync(async (req, res, next) => {
-  console.log(req.params);
+  // console.log(req.params);
   const users = await User.findByIdAndUpdate(req.params.id, {
     isActive: false,
   });

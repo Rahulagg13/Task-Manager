@@ -35,7 +35,6 @@ const CustomEditor = {
   },
 
   toggleCodeBlock(editor) {
-    console.log(Element);
     const isActive = CustomEditor.isCodeBlockActive(editor);
     Transforms.setNodes(
       editor,
